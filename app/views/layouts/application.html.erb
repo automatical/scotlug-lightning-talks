@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>ScotLUG :: Lightning Talk Submission</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <main role="main" class="container">
+      <%= yield %>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <a href="https://www.scotlug.org.uk/" target="_blank">Scottish Linux User Group</a>
+      </div>
+    </footer>
+  </body>
+</html>

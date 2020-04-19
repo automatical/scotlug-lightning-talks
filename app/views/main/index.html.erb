@@ -1,0 +1,54 @@
+<p>&nbsp;</p>
+
+<h1>Lightning Talks</h1>
+
+<hr>
+
+Please use the fom below to submit your lightning talk for this months ScotLUG. If feel free to discuss your idea on <a href="https://webchat.freenode.net/#scotlug" target="_blank">IRC</a> or our <a href="https://mailman.lug.org.uk/mailman/listinfo/scottish" target="_blank">Mailing List</a>
+
+<hr>
+
+<% if @success %>
+    <div class="alert alert-success" role="alert">Thank you, we will be in touch.</div>
+<% end %>
+
+<form method="post" onsubmit="return validate()">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+    <div class="form-group">
+        <label for="contactinformation">How can we get in touch with you (email address, irc nick, twitter, etc)</label>
+        <input type="text" class="form-control" id="contactinformation" name="contactinformation" placeholder="name@example.com">
+    </div>
+
+    <div class="form-group">
+        <label for="talktitle">A title for your lightning talk</label>
+        <input type="text" class="form-control" id="talktitle" name="talktitle" placeholder="My awesome talk">
+    </div>
+    
+    <div class="form-group">
+        <label for="talkdescription">talk description</label>
+        <textarea class="form-control" id="talkdescription" name="talkdescription" rows="3"></textarea>
+    </div>
+
+    <button class="btn btn-primary">Submit Lightning Talk</button>
+
+    <p>&nbsp;</p>
+</form>
+
+<script type="text/javascript">
+    function validate() {
+        var elements = [
+            document.getElementById("talktitle").value,
+            document.getElementById("talkdescription").value,
+            document.getElementById("contactinformation").value
+        ];
+
+        for(var i = 0; i < elements.length; i++) {
+            if(elements[i].length === 0) {
+                alert("Please fill out all fields");
+                return false;
+            }
+        }
+
+        return true;
+    }
+</script>
